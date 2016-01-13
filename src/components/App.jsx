@@ -4,8 +4,8 @@ import Header from './Header';
 export default class App extends React.Component {
   render() {
     return <div>
-      <Header title='ShopLISTER'></Header>
-      App
+      <Header title='ShopLISTER' />
+
     </div>
   }
 };
