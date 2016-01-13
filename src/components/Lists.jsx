@@ -1,15 +1,26 @@
 import React from 'react';
+import ListItem from './ListItem';
 
 class Lists extends React.Component {
-  getListItems() {
-    return this.props.items.map((item) => {
-      return item.name
+
+  clickItemHandler(id) {
+    alert(id);
+  }
+
+  getItemsList() {
+    let items = this.props.items.map((item) => {
+      return <ListItem
+        name={item.name}
+        onClick={() => {this.clickItemHandler(item.id)}} />
     });
+    return <ul>
+      {items}
+    </ul>;
   }
 
   render() {
     return <div>
-      {this.getListItems()}
+      {this.getItemsList()}
     </div>
   }
 };
