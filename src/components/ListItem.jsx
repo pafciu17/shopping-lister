@@ -23,8 +23,8 @@ class ListItem extends React.Component {
   render() {
     return <li>
       {this.getCheckBtn()}
-      {this.getDeleteBtn()}
       {this.getItemLabel()}
+      {this.getDeleteBtn()}
     </li>
   }
 };
