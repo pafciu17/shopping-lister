@@ -3,15 +3,26 @@ import ListItem from './ListItem';
 
 class Lists extends React.Component {
 
-  clickItemHandler(id) {
-    alert(id);
+  selectItem(id) {
+    console.log('select: ' + id);
+  }
+
+  checkItem(id) {
+    console.log('check: ' + id);
+  }
+
+  deleteItem(id) {
+    console.log('delete: ' + id);
   }
 
   getItemsList() {
     let items = this.props.items.map((item) => {
       return <ListItem
         name={item.name}
-        onClick={() => {this.clickItemHandler(item.id)}} />
+        onSelect={() => {this.selectItem(item.id)}}
+        onCheck={() => {this.checkItem(item.id)}}
+        onDelete={() => {this.deleteItem(item.id)}}
+      />
     });
     return <ul>
       {items}
