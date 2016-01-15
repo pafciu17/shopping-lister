@@ -16,8 +16,9 @@ class Lists extends React.Component {
   }
 
   getItemsList() {
-    const items = this.props.items.map((item) => {
+    const items = this.props.items.map((item, index) => {
       return <ListItem
+        key={index}
         name={item.name}
         onSelect={() => {this.selectItem(item.id)}}
         onCheck={() => {this.checkItem(item.id)}}
@@ -30,7 +31,8 @@ class Lists extends React.Component {
   }
 
   render() {
-    return <div>
+    return <div className="list-wrapper">
+      <h2>{this.props.title}</h2>
       {this.getItemsList()}
     </div>
   }

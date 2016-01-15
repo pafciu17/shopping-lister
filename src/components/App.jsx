@@ -13,7 +13,9 @@ export default class App extends React.Component {
     }];
     return <div>
       <Header title='ShopLISTER' />
-      <Lists items={items}/>
+      <div className='content'>
+        <Lists title={'Shopping Lists'} items={items}/>
+      </div>
     </div>
   }
 };
