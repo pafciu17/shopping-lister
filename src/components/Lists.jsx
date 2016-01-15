@@ -16,7 +16,7 @@ class Lists extends React.Component {
   }
 
   getItemsList() {
-    let items = this.props.items.map((item) => {
+    const items = this.props.items.map((item) => {
       return <ListItem
         name={item.name}
         onSelect={() => {this.selectItem(item.id)}}
