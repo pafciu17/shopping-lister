@@ -7,10 +7,6 @@ class Lists extends React.Component {
     console.log('select: ' + id);
   }
 
-  checkItem(id) {
-    console.log('check: ' + id);
-  }
-
   deleteItem(id) {
     console.log('delete: ' + id);
   }
