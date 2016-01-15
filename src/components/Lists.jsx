@@ -21,7 +21,6 @@ class Lists extends React.Component {
         key={index}
         name={item.name}
         onSelect={() => {this.selectItem(item.id)}}
-        onCheck={() => {this.checkItem(item.id)}}
         onDelete={() => {this.deleteItem(item.id)}}
       />
     });

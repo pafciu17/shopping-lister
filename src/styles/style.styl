@@ -1,6 +1,7 @@
 $header-font-size = 25px
 $color-light = #EEEEEE
 $padding-left-list-wrapper = 10px
+$item-list-height = 25px;
 
 *
   padding: 0
@@ -31,5 +32,18 @@ $padding-left-list-wrapper = 10px
     padding: 5px $padding-left-list-wrapper
 
 .list-item
+  height: $item-list-height
+  line-height: $item-list-height
+
   .list-item__label
-    margin: 0 10px
+    margin-right: 10px
+
+  .list-item__delete
+    width: 15px
+    height: $item-list-height
+    display: inline-block
+    background-size: 15px 15px
+    background-image: url('../img/delete.svg')
+    background-repeat no-repeat
+    background-position: center
+    float: right
