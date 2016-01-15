@@ -4,24 +4,24 @@ class ListItem extends React.Component {
 
   getCheckBtn() {
     if (this.props.onCheck) {
-      return <span onClick={this.props.onCheck}>Check</span>
+      return <span className='list-item__check' onClick={this.props.onCheck}>Check</span>
     }
     return '';
   }
 
   getDeleteBtn() {
     if (this.props.onDelete) {
-      return <span onClick={this.props.onDelete}>Delete</span>
+      return <span className='list-item__delete' onClick={this.props.onDelete}>Delete</span>
     }
     return '';
   }
 
   getItemLabel() {
-    return <span onClick={this.props.onSelect}>{this.props.name}</span>;
+    return <span className='list-item__label' onClick={this.props.onSelect}>{this.props.name}</span>;
   }
 
   render() {
-    return <li>
+    return <li className='list-item'>
       {this.getCheckBtn()}
       {this.getItemLabel()}
       {this.getDeleteBtn()}

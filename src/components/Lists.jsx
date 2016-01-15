@@ -31,9 +31,11 @@ class Lists extends React.Component {
   }
 
   render() {
-    return <div className="list-wrapper">
-      <h2>{this.props.title}</h2>
-      {this.getItemsList()}
+    return <div className='list-wrapper'>
+      <h2 className='list-wrapper__header'>{this.props.title}</h2>
+      <div className='list-wrapper__body'>
+        {this.getItemsList()}
+      </div>
     </div>
   }
 };

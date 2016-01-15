@@ -1,13 +1,15 @@
 $header-font-size = 25px
 $color-light = #EEEEEE
+$padding-left-list-wrapper = 10px
 
-body
+*
   padding: 0
   margin: 0
+  color: #FFFFFF
 
 .header
   padding: 10px
-  background-color #000088
+  background-color #003399
 
   .header__title
     font-weight: bold
@@ -15,4 +17,19 @@ body
     color: $color-light
 
 .content
-  padding: 10px;
+  padding: 10px
+
+.list-wrapper
+  background-color: #6699FF
+
+  .list-wrapper__header
+    background-color: #3366CC
+    padding: 5px $padding-left-list-wrapper
+    color: $color-light
+
+  .list-wrapper__body
+    padding: 5px $padding-left-list-wrapper
+
+.list-item
+  .list-item__label
+    margin: 0 10px
