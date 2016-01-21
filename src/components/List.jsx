@@ -54,4 +54,4 @@ export default connect((state) => {
   return {
     items: state.items
   }
-})(List)
+})(List);
