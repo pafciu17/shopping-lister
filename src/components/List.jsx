@@ -1,7 +1,17 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+
+import ItemAdder from './ItemAdder';
 import ListItem from './ListItem';
 
-class Lists extends React.Component {
+class List extends React.Component {
+
+  getDefaultProps() {
+    return {
+      items: []
+    };
+  }
 
   selectItem(id) {
     console.log('select: ' + id);
@@ -31,12 +41,17 @@ class Lists extends React.Component {
       <div className='list-wrapper__body'>
         {this.getItemsList()}
       </div>
+      <ItemAdder />
     </div>
   }
 };
 
-Lists.defaultProps = {
+List.defaultProps = {
   items: []
 };
 
-export default Lists;
+export default connect((state) => {
+  return {
+    items: state.items
+  }
+})(List)

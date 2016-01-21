@@ -2,22 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import Header from './Header';
-import Lists from './Lists';
+import List from './List';
 
 class App extends React.Component {
   render() {
-    console.log('here: ' + this.props.items);
-    let items = [{
-      id: 1,
-      name: 'test'
-    }, {
-      id: 2,
-      name: 'test2'
-    }];
+    const { items } = this.props;
     return <div>
       <Header title='ShopLISTER' />
       <div className='content'>
-        <Lists title={'Shopping Lists'} items={items}/>
+        <List title={'Shopping Lists'} />
       </div>
     </div>
   }
@@ -27,4 +20,4 @@ export default connect((state) => {
   return {
     items: state.items
   }
-})(App)
+})(App);
