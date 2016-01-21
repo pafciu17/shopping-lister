@@ -1,9 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux'
+
 import Header from './Header';
 import Lists from './Lists';
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
+    console.log('here: ' + this.props.items);
     let items = [{
       id: 1,
       name: 'test'
@@ -19,3 +22,9 @@ export default class App extends React.Component {
     </div>
   }
 };
+
+export default connect((state) => {
+  return {
+    items: state.items
+  }
+})(App)
