@@ -4,14 +4,18 @@ import { connect } from 'react-redux'
 import { addItem } from '../actions';
 
 class ItemAdder extends React.Component {
+
+  submit(e) {
+    this.props.dispatch(addItem(e.target.name.value));
+    e.target.name.value = '';
+    e.preventDefault();
+  }
+
   render() {
-    const { dispatch } = this.props;
-    return <div>
-      <input type='text' />
-      <span onClick={() => {
-        dispatch(addItem('test item'));
-      }} >Add</span>
-    </div>
+    return <form className='item-adder' onSubmit={this.submit.bind(this)}>
+      <input className='item-adder__input' type='text' name='name' />
+      <button className='item-adder__btn'>Add</button>
+    </form>
   }
 };
 

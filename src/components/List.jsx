@@ -7,12 +7,6 @@ import ListItem from './ListItem';
 
 class List extends React.Component {
 
-  getDefaultProps() {
-    return {
-      items: []
-    };
-  }
-
   selectItem(id) {
     console.log('select: ' + id);
   }
