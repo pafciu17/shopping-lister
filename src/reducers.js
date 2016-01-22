@@ -4,15 +4,28 @@ const initialState = {
   items: []
 };
 
+const itemReducer = (state, action) => {
+  switch (action.type) {
+    case ADD_ITEM:
+      return {
+        name: action.name,
+        completed: false
+      }
+    case TOGGLE_ITEM:
+      return Object.assign({}, state, {
+        completed: !state.completed
+      });
+  }
+};
+
 const rootReducer = (state = initialState, action = null) => {
   switch (action.type) {
     case ADD_ITEM:
       return {
-        items:[...state.items,
-        {
-          name: action.name,
-          completed: false
-        }]
+        items:[
+          ...state.items,
+          itemReducer(undefined, action)
+        ]
       };
     case TOGGLE_ITEM:
       return {
@@ -20,9 +33,7 @@ const rootReducer = (state = initialState, action = null) => {
           if (index !== action.index) {
             return item;
           }
-          return Object.assign({}, item, {
-            completed: !item.completed
-          });
+          return itemReducer(item, action);
         })
       };
     default:
