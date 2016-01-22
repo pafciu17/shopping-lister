@@ -1,4 +1,4 @@
-import { ADD_ITEM, TOGGLE_ITEM } from './actions';
+import { ADD_ITEM, TOGGLE_ITEM, DELETE_ITEM } from './actions';
 
 const initialState = {
   items: []
@@ -10,11 +10,13 @@ const itemReducer = (state, action) => {
       return {
         name: action.name,
         completed: false
-      }
+      };
     case TOGGLE_ITEM:
       return Object.assign({}, state, {
         completed: !state.completed
       });
+    default:
+      return state;
   }
 };
 
@@ -35,6 +37,13 @@ const rootReducer = (state = initialState, action = null) => {
           }
           return itemReducer(item, action);
         })
+      };
+    case DELETE_ITEM:
+      return {
+        items: [
+          ...state.items.slice(0, action.index),
+          ...state.items.slice(action.index + 1)
+        ]
       };
     default:
       return state;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { toggleItem } from '../actions';
+import { toggleItem, deleteItem } from '../actions';
 import ItemAdder from './ItemAdder';
 import ListItem from './ListItem';
 
@@ -11,8 +11,8 @@ class List extends React.Component {
     this.props.dispatch(toggleItem(index));
   }
 
-  deleteItem(id) {
-    console.log('delete: ' + id);
+  deleteItem(index) {
+    this.props.dispatch(deleteItem(index));
   }
 
   getItemsList() {
