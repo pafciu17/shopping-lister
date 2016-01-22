@@ -7,25 +7,18 @@ import ListItem from './ListItem';
 
 class List extends React.Component {
 
-  selectItem(index) {
-    this.props.dispatch(toggleItem(index));
-  }
-
-  deleteItem(index) {
-    this.props.dispatch(deleteItem(index));
-  }
-
   getItemsList() {
-    const items = this.props.items.map((item, index) => {
+    const { items, onSelectItem, onDeleteItem } = this.props;
+    const listItems = items.map((item, index) => {
       return <ListItem
         key={index}
         {...item}
-        onSelect={() => {this.selectItem(index)}}
-        onDelete={() => {this.deleteItem(index)}}
+        onSelect={() => {onSelectItem(index)}}
+        onDelete={() => {onDeleteItem(index)}}
       />
     });
     return <ul>
-      {items}
+      {listItems}
     </ul>;
   }
 
@@ -44,8 +37,4 @@ List.defaultProps = {
   items: []
 };
 
-export default connect((state) => {
-  return {
-    items: state.items
-  }
-})(List);
+export default List;
