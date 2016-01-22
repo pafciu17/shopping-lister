@@ -3,7 +3,8 @@ import React from 'react';
 class ListItem extends React.Component {
 
   getCheckBtn() {
-      return <input className='list-item__check' type='checkbox' onClick={this.props.onSelect} />;
+    return <input className='list-item__check' checked={this.props.completed}
+      type='checkbox' onClick={this.props.onSelect} />;
   }
 
   getDeleteBtn() {
@@ -14,7 +15,8 @@ class ListItem extends React.Component {
   }
 
   getItemLabel() {
-    return <span className='list-item__label' onClick={this.props.onSelect}>{this.props.name}</span>;
+    return <span className='list-item__label'
+      onClick={this.props.onSelect}>{this.props.name}</span>;
   }
 
   render() {

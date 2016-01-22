@@ -1,9 +1,7 @@
-import { ADD_ITEM, COMPLETE_ITEM } from './actions';
+import { ADD_ITEM, TOGGLE_ITEM } from './actions';
 
 const initialState = {
-  items: [{
-    name: 'test1'
-  }]
+  items: []
 };
 
 const rootReducer = (state = initialState, action = null) => {
@@ -12,9 +10,21 @@ const rootReducer = (state = initialState, action = null) => {
       return {
         items:[...state.items,
         {
-          name: action.name
+          name: action.name,
+          completed: false
         }]
-    }
+      };
+    case TOGGLE_ITEM:
+      return {
+        items: state.items.map((item, index) => {
+          if (index !== action.index) {
+            return item;
+          }
+          return Object.assign({}, item, {
+            completed: !item.completed
+          });
+        })
+      };
     default:
       return state;
   }

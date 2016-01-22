@@ -6,7 +6,10 @@ import { addItem } from '../actions';
 class ItemAdder extends React.Component {
 
   submit(e) {
-    this.props.dispatch(addItem(e.target.name.value));
+    const name = e.target.name.value;
+    if (name) {
+      this.props.dispatch(addItem(e.target.name.value));
+    }
     e.target.name.value = '';
     e.preventDefault();
   }

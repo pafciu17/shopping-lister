@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-
+import { toggleItem } from '../actions';
 import ItemAdder from './ItemAdder';
 import ListItem from './ListItem';
 
 class List extends React.Component {
 
-  selectItem(id) {
-    console.log('select: ' + id);
+  selectItem(index) {
+    this.props.dispatch(toggleItem(index));
   }
 
   deleteItem(id) {
@@ -19,9 +19,9 @@ class List extends React.Component {
     const items = this.props.items.map((item, index) => {
       return <ListItem
         key={index}
-        name={item.name}
-        onSelect={() => {this.selectItem(item.id)}}
-        onDelete={() => {this.deleteItem(item.id)}}
+        {...item}
+        onSelect={() => {this.selectItem(index)}}
+        onDelete={() => {this.deleteItem(index)}}
       />
     });
     return <ul>

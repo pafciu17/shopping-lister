@@ -1,17 +1,16 @@
 export const ADD_ITEM = 'ADD_ITEM';
-export const COMPLETE_ITEM = 'COMPLETE_ITEM';
+export const TOGGLE_ITEM = 'TOOGLE_ITEM';
 
 export const addItem = (name) => {
-  console.log('action name: ' + name);
   return {
     type: ADD_ITEM,
     name
   };
 };
 
-export const completeItem = (id) => {
+export const toggleItem = (index) => {
   return {
-    type: COMPLETE_ITEM,
-    id
+    type: TOGGLE_ITEM,
+    index
   }
 };
