@@ -1,14 +1,9 @@
 import React from 'react';
-import TestUtils from 'react-addons-test-utils';
+
+import { renderShallow } from '../utils';
 
 import List from '../../src/components/List';
 import ListItem from '../../src/components/ListItem';
-
-const renderShallow = (element) => {
-  const renderer = TestUtils.createRenderer();
-  renderer.render(element);
-  return renderer.getRenderOutput();
-};
 
 describe("List", () => {
   let renderedList;
@@ -74,7 +69,6 @@ describe("List", () => {
 
       expect(componentProps.onDeleteItem).toHaveBeenCalledWith(1);
       expect(componentProps.onDeleteItem).not.toHaveBeenCalledWith(0);
-
     });
   });
 });
