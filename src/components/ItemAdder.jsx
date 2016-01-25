@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { addItem } from '../actions';
 
-class ItemAdder extends React.Component {
+export class ItemAdder extends React.Component {
 
   submit(e) {
     const name = e.target.name.value;
