@@ -45,35 +45,36 @@ describe("List", () => {
     expect(body.props.className).toBe('list-wrapper__body');
   });
 
-  it('should render list items components', () => {
-    const body = renderedList.props.children[1];
-    const ul = body.props.children;
-    const itemComponents = ul.props.children;
+  describe('items property', () => {
+    let itemComponents;
 
-    expect(itemComponents.length).toBe(componentProps.items.length);
-    itemComponents.forEach((listItem, index) => {
-      const inputComponentProps = componentProps.items[index];
-      expect(listItem.type).toBe(ListItem);
-      expect(listItem.props.name).toBe(inputComponentProps.name);
-      expect(listItem.props.completed).toBe(inputComponentProps.completed);
+    beforeAll(() => {
+      const body = renderedList.props.children[1];
+      const ul = body.props.children;
+      itemComponents = ul.props.children;
+    });
+
+    it('should render list items components', () => {
+      expect(itemComponents.length).toBe(componentProps.items.length);
+      itemComponents.forEach((listItem, index) => {
+        const inputComponentProps = componentProps.items[index];
+        expect(listItem.type).toBe(ListItem);
+        expect(listItem.props.name).toBe(inputComponentProps.name);
+        expect(listItem.props.completed).toBe(inputComponentProps.completed);
+      });
+    });
+
+    it('onSelectItem should be bound to selectItem callback of ListItem ', () => {
+      itemComponents[0].props.onSelect();
+
+      expect(componentProps.onSelectItem).toHaveBeenCalledWith(0);
+      expect(componentProps.onSelectItem).not.toHaveBeenCalledWith(1);
+
+      itemComponents[1].props.onDelete();
+
+      expect(componentProps.onDeleteItem).toHaveBeenCalledWith(1);
+      expect(componentProps.onDeleteItem).not.toHaveBeenCalledWith(0);
+
     });
   });
-
-  it('onSelectItem should be bound to selectItem callback of ListItem ', () => {
-    const body = renderedList.props.children[1];
-    const ul = body.props.children;
-    const itemComponents = ul.props.children;
-
-    itemComponents[0].props.onSelect();
-
-    expect(componentProps.onSelectItem).toHaveBeenCalledWith(0);
-    expect(componentProps.onSelectItem).not.toHaveBeenCalledWith(1);
-
-    itemComponents[1].props.onDelete();
-
-    expect(componentProps.onDeleteItem).toHaveBeenCalledWith(1);
-    expect(componentProps.onDeleteItem).not.toHaveBeenCalledWith(0);
-
-  });
-
 });
