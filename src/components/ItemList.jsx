@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { toggleItem, deleteItem } from '../actions';
 import List from './List';
+import ItemAdder from './ItemAdder';
 
 class ItemList extends React.Component {
 
@@ -16,11 +17,13 @@ class ItemList extends React.Component {
 
   render() {
     const { items } = this.props;
-    return <List
-      items={items}
-      onSelectItem={this.selectItem.bind(this)}
-      onDeleteItem={this.deleteItem.bind(this)}
-    />
+    return <div>
+        <List
+        items={items}
+        onSelectItem={this.selectItem.bind(this)}
+        onDeleteItem={this.deleteItem.bind(this)} />
+        <ItemAdder />
+      </div>
   }
 };
 

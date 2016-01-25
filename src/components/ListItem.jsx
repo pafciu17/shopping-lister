@@ -29,6 +29,8 @@ class ListItem extends React.Component {
 };
 
 ListItem.defaultProps = {
+  completed: false,
+  name: '',
   onSelect: () => {},
   onCheck: null,
   onDelete: null

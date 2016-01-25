@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { toggleItem, deleteItem } from '../actions';
-import ItemAdder from './ItemAdder';
 import ListItem from './ListItem';
 
 class List extends React.Component {
@@ -28,13 +27,14 @@ class List extends React.Component {
       <div className='list-wrapper__body'>
         {this.getItemsList()}
       </div>
-      <ItemAdder />
     </div>
   }
 };
 
 List.defaultProps = {
-  items: []
+  items: [],
+  onSelectItem: () => {},
+  onDeleteItem: () => {}
 };
 
 export default List;
