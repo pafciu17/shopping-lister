@@ -32,7 +32,7 @@ ListItem.defaultProps = {
   completed: false,
   name: '',
   onSelect: () => {},
-  onDelete: null
+  onDelete: () => {}
 };
 
 export default ListItem;
