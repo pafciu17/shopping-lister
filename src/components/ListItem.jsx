@@ -32,7 +32,6 @@ ListItem.defaultProps = {
   completed: false,
   name: '',
   onSelect: () => {},
-  onCheck: null,
   onDelete: null
 };
 
