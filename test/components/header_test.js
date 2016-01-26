@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { renderShallow } from '../utils';
 
 import Header from '../../src/components/Header';

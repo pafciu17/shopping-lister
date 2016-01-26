@@ -1,5 +1,5 @@
-import { initialState, rootReducer } from '../../src/reducers';
-import { ADD_ITEM, TOGGLE_ITEM, DELETE_ITEM } from '../../src/actions';
+import { initialState, rootReducer } from '../src/reducers';
+import { ADD_ITEM, TOGGLE_ITEM, DELETE_ITEM } from '../src/actions';
 
 const createStateItems = (...items) => {
   return items.map((item) => {

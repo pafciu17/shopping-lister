@@ -1,7 +1,7 @@
 import {
     addItem, toggleItem, deleteItem,
     ADD_ITEM, TOGGLE_ITEM, DELETE_ITEM
-  } from '../../src/actions';
+  } from '../src/actions';
 
 describe('actions', () => {
 
