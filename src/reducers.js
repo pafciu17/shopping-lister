@@ -1,6 +1,6 @@
 import { ADD_ITEM, TOGGLE_ITEM, DELETE_ITEM } from './actions';
 
-const initialState = {
+export const initialState = {
   items: []
 };
 
@@ -20,7 +20,7 @@ const itemReducer = (state, action) => {
   }
 };
 
-const rootReducer = (state = initialState, action = null) => {
+export const rootReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case ADD_ITEM:
       return {
