@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 class ListItem extends React.Component {
 
@@ -12,7 +13,8 @@ class ListItem extends React.Component {
   }
 
   getItemLabel() {
-    return <span className='list-item__label'
+    const className = classnames('list-item__label', { 'list-item__label--checked': this.props.completed });
+    return <span className={className}
       onClick={this.props.onSelect}>{this.props.name}</span>;
   }
 
