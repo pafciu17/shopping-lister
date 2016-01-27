@@ -9,7 +9,7 @@ class App extends React.Component {
     return <div>
       <Header title='ShopLISTER' />
       <div className='content'>
-        <ItemList title={'Shopping Lists'} />
+        <ItemList title={'To do'} />
       </div>
     </div>
   }

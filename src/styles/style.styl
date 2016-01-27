@@ -1,63 +1,74 @@
-/*$header-font-size = 25px*/
-/*$color-very-light = #EEEEEE*/
-/*$color-light = #6699FF*/
-/*$color-dark = #003399*/
-/*$color-input = #000000*/
-/*$padding-left-list-wrapper = 10px*/
-/*$item-list-height = 25px;*/
+$header-font-size = 25px
+$color-very-light = #EEEEEE
+$color-light = #6699FF
+$color-medium =#3366CC
+$color-dark = #003399
+$color-input = #000000
+$padding-left-list-wrapper = 10px
+$item-list-height = 25px
+$border-radius = 5px
 
-/***/
-  /*padding: 0*/
-  /*margin: 0*/
-  /*color: #FFFFFF*/
+border-top-radius(n)
+  border-radius: n n 0 0
 
-/*.header*/
-  /*padding: 10px*/
-  /*background-color $color-dark*/
+border-bottom-radius(n)
+  border-radius: 0 0 n n
+*
+  padding: 0
+  margin: 0
+  color: #FFFFFF
 
-  /*.header__title*/
-    /*font-weight: bold*/
-    /*font-size: $header-font-size*/
-    /*color: $color-very-light*/
+.header
+  padding: 10px
+  background-color $color-dark
 
-/*.content*/
-  /*padding: 10px*/
+  .header__title
+    font-weight: bold
+    font-size: $header-font-size
+    color: $color-very-light
 
-/*.list-wrapper*/
-  /*background-color: $color-light*/
+.content
+  padding: 10px
 
-  /*.list-wrapper__header*/
-    /*background-color: #3366CC*/
-    /*padding: 5px $padding-left-list-wrapper*/
-    /*color: $color-very-light*/
+.list-wrapper
+  background-color: $color-light
+  border-top-radius($border-radius)
 
-  /*.list-wrapper__body*/
-    /*padding: 5px $padding-left-list-wrapper*/
+  .list-wrapper__header
+    background-color: $color-medium
+    padding: 5px $padding-left-list-wrapper
+    color: $color-very-light
+    border-top-radius($border-radius)
 
-/*.list-item*/
-  /*height: $item-list-height*/
-  /*line-height: $item-list-height*/
+  .list-wrapper__body
+    padding: 5px $padding-left-list-wrapper
 
-  /*.list-item__check*/
-    /*margin-right: 5px;*/
+.list-item
+  height: $item-list-height
+  line-height: $item-list-height
 
-  /*.list-item__delete*/
-    /*width: 15px*/
-    /*height: $item-list-height*/
-    /*display: inline-block*/
-    /*background-size: 15px 15px*/
-    /*background-image: url('../img/delete.svg')*/
-    /*background-repeat no-repeat*/
-    /*background-position: center*/
-    /*float: right*/
+  .list-item__check
+    margin-right: 5px;
 
-/*.item-adder*/
-  /*padding: 5px $padding-left-list-wrapper*/
+  .list-item__delete
+    width: 15px
+    height: $item-list-height
+    display: inline-block
+    background-size: 15px 15px
+    background-image: url('../img/delete.svg')
+    background-repeat no-repeat
+    background-position: center
+    float: right
 
-  /*.item-adder__input*/
-    /*color: $color-input*/
-    /*padding: 5px 10px*/
+.item-adder
+  padding: 5px $padding-left-list-wrapper
+  background-color: $color-medium
+  border-bottom-radius($border-radius);
 
-  /*.item-adder__btn*/
-    /*background-color: $color-dark*/
-    /*padding: 5px 10px*/
+  .item-adder__input
+    color: $color-input
+    padding: 5px 10px
+
+  .item-adder__btn
+    background-color: $color-dark
+    padding: 5px 10px

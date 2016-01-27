@@ -16,9 +16,10 @@ class ItemList extends React.Component {
   }
 
   render() {
-    const { items } = this.props;
+    const { items, title } = this.props;
     return <div>
         <List
+        title={title}
         items={items}
         onSelectItem={this.selectItem.bind(this)}
         onDeleteItem={this.deleteItem.bind(this)} />

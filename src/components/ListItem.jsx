@@ -8,7 +8,7 @@ class ListItem extends React.Component {
   }
 
   getDeleteBtn() {
-    return <span className='list-item__delete' onClick={this.props.onDelete}>DELETE</span>;
+    return <span className='list-item__delete' onClick={this.props.onDelete}></span>;
   }
 
   getItemLabel() {
