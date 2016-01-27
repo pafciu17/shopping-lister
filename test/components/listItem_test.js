@@ -31,7 +31,6 @@ describe('ListItem', () => {
 
     expect(deleteElement.type).toBe('span');
     expect(deleteElement.props.className).toBe('list-item__delete');
-    expect(deleteElement.props.children).toBe('DELETE');
   });
 
   it('onSelect props should be bound to onClick props of checkbox and label element', () => {
