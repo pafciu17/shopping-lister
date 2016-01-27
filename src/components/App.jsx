@@ -7,7 +7,6 @@ import ItemList from './ItemList';
 class App extends React.Component {
   render() {
     return <div>
-      <Header title='ShopLISTER' />
       <div className='content'>
         <ItemList title={'To do'} />
       </div>

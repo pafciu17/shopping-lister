@@ -16,8 +16,9 @@ class List extends React.Component {
         onDelete={() => {onDeleteItem(index)}}
       />
     });
+
     return <ul>
-      {listItems}
+      {listItems.length > 0 ? listItems : 'No items'}
     </ul>;
   }
 
