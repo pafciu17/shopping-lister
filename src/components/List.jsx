@@ -18,7 +18,7 @@ class List extends React.Component {
     });
 
     return <ul>
-      {listItems.length > 0 ? listItems : 'No items'}
+      {listItems.length > 0 ? listItems : 'No entries'}
     </ul>;
   }
 
