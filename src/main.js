@@ -18,7 +18,3 @@ ReactDom.render(
     <App />
   </Provider>,
   document.getElementById('app'));
-
-import { fetchState } from './actions';
-
-store.dispatch(fetchState());

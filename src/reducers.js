@@ -1,6 +1,11 @@
-import { ADD_ITEM, TOGGLE_ITEM, DELETE_ITEM } from './actions';
+import {
+  ADD_ITEM, TOGGLE_ITEM, DELETE_ITEM,
+  FETCH_ITEMS_REQUEST, FETCH_ITEMS_RECEIVE
+} from './actions';
+
 
 export const initialState = {
+  isFetching: false,
   items: []
 };
 
@@ -21,6 +26,7 @@ const itemReducer = (state, action) => {
 };
 
 export const rootReducer = (state = initialState, action = {}) => {
+  console.log(state);
   switch (action.type) {
     case ADD_ITEM:
       return {
@@ -44,6 +50,16 @@ export const rootReducer = (state = initialState, action = {}) => {
           ...state.items.slice(0, action.index),
           ...state.items.slice(action.index + 1)
         ]
+      };
+    case FETCH_ITEMS_REQUEST:
+      return {
+        isFetching: true,
+        items: [...state.items]
+      };
+    case FETCH_ITEMS_RECEIVE:
+      return {
+        isFetching: false,
+        items: [...action.items]
       };
     default:
       return state;
