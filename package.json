@@ -42,6 +42,7 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
-    "react": "^0.14.6"
+    "react": "^0.14.6",
+    "redux-thunk": "^1.0.3"
   }
 }
